@@ -13,18 +13,12 @@ org
     (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
             (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)"))))
 #+end_src
-
-*** TODO Test:
-/Works fine/
-**** DONE one
-That is a trial demo for me to visaulise is it working or not
-**** TODO two
-**** DONE three
 ** Cute characters instead of asterisk:
 This Snippet
 This is the cute starts that are positioned before a heading (default they all are asterisks)
 #+begin_src emacs-lisp
 ;; Installed with M-x package-install RET org-bullets RET
+;; Also somethimes It could not work. For troubleshooting please run: =org-superstar-configure-like-org-bullets=
 (use-package org-bullets
       :ensure t
       :config
@@ -45,6 +39,13 @@ This is going to change the extension of shrinked header:
 
 #+RESULTS:
 : ⤸
+* Keybindings:
+/This file is going to be used as a cheatsheet/
+
+Actually there is no need for me to write seme non-sense keybindings here. Please have a look at these links:
+[[https://orgmode.org/worg/org-tutorials/org4beginners.html#org39c9abf][Org Beggining Guide]]
+[[https://orgmode.org/org.html#A-Texinfo-example][The Org Manual]]
+[[https://orgmode.org/orgguide.html#Headlines][Org-Mode Compact Guide]]
 
 * LICENSE
 #+begin_src text
