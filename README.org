@@ -4,3 +4,54 @@ org
   --------------------------------------------
  | This is my journey on using Emacs org-mode |
   --------------------------------------------
+
+* Configuration:
+** Child Hierarchy:
+/This Snippet Makes Parent Headers unDONEable if the children is not DONE/
+#+begin_src emacs-lisp
+(setq org-todo-keywords
+    (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
+            (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)"))))
+#+end_src
+
+*** TODO Test:
+/Works fine/
+**** DONE one
+That is a trial demo for me to visaulise is it working or not
+**** TODO two
+**** DONE three
+** Cute characters instead of asterisk:
+This Snippet
+This is the cute starts that are positioned before a heading (default they all are asterisks)
+#+begin_src emacs-lisp
+;; Installed with M-x package-install RET org-bullets RET
+(use-package org-bullets
+      :ensure t
+      :config
+      ;; Tbh It's pretty random now. But I can change it later
+      (setq org-bullets-bullet-list '("▶" "◉" "§" "Σ" "Ψ" "Ω" "β" "δ" "ᗧ" "᠉" "⋑" "✸")))
+#+end_src
+
+#+RESULTS:
+: t
+** Changing ellapsis:
+This is going to change the extension of shrinked header:
+#+begin_src emacs-lisp
+(after! org
+  ;; Setting folded header identifier
+  (setq org-ellipsis "⤸") ;; ⤵ :arrow_down: ⤸ :arrow_up: ▾ :arrow_down_small: ▴
+)
+#+end_src
+
+#+RESULTS:
+: ⤸
+
+* LICENSE
+#+begin_src text
+Copyright 2023 KoBruhh
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+#+end_src
